@@ -17,6 +17,11 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
+            name:
+              blank: "が入力されていません。"
+              too_short: "は%{count}文字以上に設定して下さい。"
+              too_long: "は%{count}文字以下に設定して下さい。"
+              invalid: "は有効でありません。"
     attributes:
       user:
         confirmation_sent_at: パスワード確認送信時刻
@@ -42,6 +47,7 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        name: 名前
     models:
       user: ユーザ
   users:
