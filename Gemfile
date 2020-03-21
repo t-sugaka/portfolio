@@ -65,3 +65,6 @@ gem 'bootstrap-sass'
 
 #ログイン機能に'devise'を使う
 gem 'devise'
+#deviseを日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
