@@ -13,15 +13,31 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <div class="nav-bar">
-    <% if user_signed_in? %>
-      <%= link_to 'プロフィール変更', edit_user_registration_path %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to 'ユーザー登録', new_user_registration_path %>
-      <%= link_to 'ログイン', new_user_session_path %>
-    <% end %>
-  </div>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'プロフィール変更', edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <%= image_tag "icons/register.png" %>
+            <% end %>
+          </li>
+          <li>
+          <%= link_to new_user_session_path do %>
+            <%= image_tag "icons/login.png" %>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 </html>
