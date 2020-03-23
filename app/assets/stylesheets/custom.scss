@@ -962,32 +962,49 @@ html {
   /*----------------------------------
     Header
   ------------------------------------*/
-  @media (max-width: 767px) {
-    .navbar-expand-sm.fixed-top {
-      background-color: rgba(27, 30, 36, 0.3);
+  // @media (max-width: 767px) {
+  //   .navbar-expand-sm.fixed-top {
+  //     background-color: rgba(27, 30, 36, 0.3);
+  //   }
+  // }
+  
+  // @media (max-width: 991px) {
+  //   .navbar-expand-md.fixed-top {
+  //     background-color: rgba(27, 30, 36, 0.3);
+  //   }
+  // }
+  
+  // @media (max-width: 1199px) {
+  //   .navbar-expand-lg.fixed-top {
+  //     background-color: rgba(27, 30, 36, 0.3);
+  //   }
+  // }
+  
+  // .navbar-bg-onscroll.fixed-top {
+  //   background-color: #672e8d;
+  //   transition: all .3s ease-out;
+  // }
+  
+  // .navbar-bg-onscroll.fixed-top--fade {
+  //   transition: all .4s ease-out;
+  // }
+  .navbar-transparent {
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    a {
+      color: #fff !important;
     }
   }
   
-  @media (max-width: 991px) {
-    .navbar-expand-md.fixed-top {
-      background-color: rgba(27, 30, 36, 0.3);
-    }
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
   }
   
-  @media (max-width: 1199px) {
-    .navbar-expand-lg.fixed-top {
-      background-color: rgba(27, 30, 36, 0.3);
-    }
+  img {
+    height: 40px;
   }
   
-  .navbar-bg-onscroll.fixed-top {
-    background-color: #672e8d;
-    transition: all .3s ease-out;
-  }
-  
-  .navbar-bg-onscroll.fixed-top--fade {
-    transition: all .4s ease-out;
-  }
   
   /*------------------------------------
     Portfolio
