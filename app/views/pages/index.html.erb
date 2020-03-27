@@ -5,8 +5,19 @@
           <p class="h6 text-uppercase u-letter-spacing-sm mb-0">A beautiful Open Source Bootstrap 4 UI Kit!</p>
           <h1 class="display-2 display-md-1 u-font-accent font-weight-light">Stream <span class="d-none d-md-inline-block">-</span> UI Kit</h1>
           <a href="#js-scroll-to-section" class="text-uppercase text-white font-weight-bold u-font-size-75">お店を探す</a>
+          <p>
+            <%= @prefs.map{|hash| hash["pref_name"]} %>
+          </p>
           <span class="fa fa-angle-down d-block"></span>
         </div>
       </div>
     </div>
   </div>
+
+  <%= form_with method: :post, url: restaurants_path	, local: true do |f| %>
+    <p>
+      <%= f.label :freeword, 'フリーワード' %>
+      <%= f.text_field :search %>
+      <%= f.submit "検索", :freeword => nil, class: "btn btn-primary" %>
+    </p>
+  <% end %>
