@@ -19,5 +19,7 @@
       <%= f.label :freeword, 'フリーワード' %>
       <%= f.text_field :search %>
       <%= f.submit "検索", :freeword => nil, class: "btn btn-primary" %>
+      <%= f.select :pref_name, @prefs.map{|hash| hash["pref_name"]} %>
+
     </p>
   <% end %>
