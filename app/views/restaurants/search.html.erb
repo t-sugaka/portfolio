@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <%= form_with method: :post, local: true do |f| %>
+  <%= form_with method: :post, url: 'restaurants/result', local: true do |f| %>
     <p>
       <%= f.label :freeword, 'フリーワード' %>
       <%= f.text_field :freeword %>
