@@ -1,4 +1,6 @@
-<%# <%= @restaurant %>
-<%# <%= @restaurant.freeword %> %>
-<%# <%= @restaurant.pref_name %> %> %>
-<%= p params[:restaurant] %>
+<% if @rests %>
+    <% @rests.each do |rest| %>
+        <%= rest["name"] %>
+        <%= rest["address"] %>
+    <% end %>
+<% end %>

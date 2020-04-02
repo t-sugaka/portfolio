@@ -26,10 +26,21 @@ class RestaurantsController < ApplicationController
 	    }
 	      
 	    uri = URI(base_url + '?' + parameters.to_param)
-	      
 	    response_json = Net::HTTP.get(uri)
-	      
-	    p response_data = JSON.parse(response_json)
+		response_data = JSON.parse(response_json)
+		
+		@rests = response_data['rest']
+		p @rests
+		# @result = []
+		# shop = {}
+
+		# if rests
+		# 	rests.each do |rest|
+		# 		shop[:shop_name] = rest['name']
+		# 		shop[:tel] =rest['tel']
+		# 	end
+		# end
+		# p shop
 	end
 
 	private
@@ -58,18 +69,18 @@ class RestaurantsController < ApplicationController
 	  # prefs = prefs.each{|id,(pref_code, pref_name)| puts "#{id}: #{pref_code}, #{pref_name}"}
 	  end
 
-	  def search_params
-		base_url = 'https://api.gnavi.co.jp/master/PrefSearchAPI/v3/?keyid='
+	#   def search_params
+	# 	base_url = 'https://api.gnavi.co.jp/master/PrefSearchAPI/v3/?keyid='
 
-		keyid = 'b35ede964272d8030ce8cbf69c942bb8'
-		parameters = {
-		  'lang' =>'ja',
-		  'freeword' => params[:freeword],
-		  'category_l' => 'RSFST16000',
-		#   'hit_per_page' => 10
-		}
-		 uri = URI(base_url + keyid + parameters.to_param)
-        response_json = Net::HTTP.get(uri)
-      	response_data = JSON.parse(response_json)
-		end
+	# 	keyid = 'b35ede964272d8030ce8cbf69c942bb8'
+	# 	parameters = {
+	# 	  'lang' =>'ja',
+	# 	  'freeword' => params[:freeword],
+	# 	  'category_l' => 'RSFST16000',
+	# 	#   'hit_per_page' => 10
+	# 	}
+	# 	 uri = URI(base_url + keyid + parameters.to_param)
+    #     response_json = Net::HTTP.get(uri)
+    #   	response_data = JSON.parse(response_json)
+	# 	end
 end
