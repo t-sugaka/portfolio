@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  root "restaurants#search"
   devise_for :users
-  get 'pages/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "pages#index"
-  
-  resources :restaurants
-  post '/restaurants' => 'restrants#create'
 
+  resources :restaurants
+  post 'restaurants/result', to: 'restaurants#result'
 end

@@ -1,0 +1,7 @@
+<% if @rests %>
+    <% @rests.each do |rest| %>
+        <%= image_tag(rest["image_url"]["shop_image1"]) %>
+        <%= rest["name"] %>
+        <%= rest["address"] %>
+    <% end %>
+<% end %>
