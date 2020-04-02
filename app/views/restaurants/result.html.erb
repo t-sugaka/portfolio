@@ -1,0 +1,6 @@
+<% if @rests %>
+    <% @rests.each do |rest| %>
+        <%= rest["name"] %>
+        <%= rest["address"] %>
+    <% end %>
+<% end %>

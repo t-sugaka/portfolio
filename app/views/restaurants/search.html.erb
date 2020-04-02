@@ -6,7 +6,7 @@
           <h1 class="display-2 display-md-1 u-font-accent font-weight-light">Stream <span class="d-none d-md-inline-block">-</span> UI Kit</h1>
           <a href="#js-scroll-to-section" class="text-uppercase text-white font-weight-bold u-font-size-75">お店を探す</a>
           <p>
-            <%= @prefs.map{|hash| hash["pref_name"]} %>
+            <%= @prefs %>
           </p>
           <span class="fa fa-angle-down d-block"></span>
         </div>
@@ -14,11 +14,11 @@
     </div>
   </div>
 
-  <%= form_with method: :post, local: true do |f| %>
+  <%= form_with method: :post, url: 'restaurants/result', local: true do |f| %>
     <p>
       <%= f.label :freeword, 'フリーワード' %>
       <%= f.text_field :freeword %>
       <%= f.submit "検索", :freeword => nil, class: "btn btn-primary" %>
-      <%= f.select :pref_name, @prefs.map{|hash| hash["pref_name"]} %>
+      <%= f.select :pref_name, @prefs %>
     </p>
   <% end %>
