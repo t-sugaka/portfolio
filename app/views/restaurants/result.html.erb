@@ -1,7 +1,19 @@
-<% if @rests %>
-    <% @rests.each do |rest| %>
-        <%= image_tag(rest["image_url"]["shop_image1"]) %>
-        <%= rest["name"] %>
-        <%= rest["address"] %>
+<div class="container">
+    <% if @rests %>
+        <div class="card-body">
+                <% @rests.each do |rest| %>
+                    <div class="row">
+                        <div class="card my-3" style="max-width: 1000px">
+                            <%= image_tag(rest["image_url"]["shop_image1"]) %>
+                            <p>
+                            <%= rest["name"] %>
+                            </p>
+                            <p>
+                            <%= rest["address"] %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
     <% end %>
-<% end %>
+</div>
