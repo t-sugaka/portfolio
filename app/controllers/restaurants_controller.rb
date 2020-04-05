@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
 		  'category_l' => 'RSFST16000',
 		  'freeword' => params[:search],
 	      'pref' => 'PREF13',
-	      'hit_per_page' => 10
+	      'hit_per_page' => 1
 	    }
 	      
 	    uri = URI(base_url + '?' + parameters.to_param)
