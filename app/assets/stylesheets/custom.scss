@@ -1303,3 +1303,29 @@ html {
     opacity: .6;
   }
   
+  .heart {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    // left: 50%;
+    margin-top: 12px;
+    margin-left: -15px;
+  }
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 15px;
+    height: 24px;
+    background: #EEEEEE;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  .heart:after {
+    left: 35px;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+  }

@@ -5,4 +5,7 @@ Rails.application.routes.draw do
 
   resources :restaurants
   post 'restaurants/result', to: 'restaurants#result'
+
+  get 'bookmarks/index'
+  post '/bookmarks', to: 'bookmarks#create'
 end

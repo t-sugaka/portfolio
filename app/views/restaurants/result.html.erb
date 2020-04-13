@@ -11,6 +11,9 @@
                             <p>
                             <%= rest["address"] %>
                             </p>
+                            <%= link_to bookmarks_path(restaurant_id: rest["id"]), method: :post do %>
+                                <div class="heart"></div>
+                            <% end %>
                             <p>
                             <%= hidden_field_tag :restaurant_id, rest["id"]%>
                         </div>

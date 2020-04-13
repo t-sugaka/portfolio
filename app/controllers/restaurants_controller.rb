@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-	require "pry"
+	# require "pry"
 
 	def index
 		p params
