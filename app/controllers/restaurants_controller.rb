@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
-	# require "pry"
+	 #require "pry"
 
 	def index
 		p params
 	end
-	
-	def create
+
+	def show
 
 	end
 	
@@ -14,7 +14,7 @@ class RestaurantsController < ApplicationController
 	end
 	
 	def result
-		# binding.pry
+		#binding.pry
 		base_url='https://api.gnavi.co.jp/RestSearchAPI/v3'
       
 	    parameters = {
@@ -30,7 +30,7 @@ class RestaurantsController < ApplicationController
 		response_data = JSON.parse(response_json)
 		
 		@rests = response_data['rest']
-		p @rests
+		# p @rests
 		# @result = []
 		# shop = {}
 
@@ -41,6 +41,10 @@ class RestaurantsController < ApplicationController
 		# 	end
 		# end
 		# p shop
+	end
+
+	def bookmark_check
+		@checking = Bookmark.find_by(user_id: current_user, restaurant_id: rest["id"])
 	end
 
 	private
@@ -65,10 +69,11 @@ class RestaurantsController < ApplicationController
 			pref_names << prefecture_data["pref_name"]
 		end
 	
-	  p pref_names
+	  #	p pref_names
 	  # prefs = prefs.each{|id,(pref_code, pref_name)| puts "#{id}: #{pref_code}, #{pref_name}"}
 	  end
 
+	  
 	#   def search_params
 	# 	base_url = 'https://api.gnavi.co.jp/master/PrefSearchAPI/v3/?keyid='
 

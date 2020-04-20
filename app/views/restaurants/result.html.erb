@@ -11,11 +11,17 @@
                             <p>
                             <%= rest["address"] %>
                             </p>
-                            <%= link_to bookmarks_path(restaurant_id: rest["id"]), method: :post do %>
-                                <div class="heart"></div>
+                            <%= hidden_field_tag :restaurant_id, rest["id"] %>
+                            <% if @checking === nil %>
+                            <%- @checking %>
+                                <%= link_to bookmarks_path(restaurant_id: rest["id"]), method: :get do %>
+                                    <div class="heart"></div>
+                                <% end %>
+                            <% else %>
+                                <%= link_to bookmarks_path(restaurant_id: rest["id"]), method: :delete do %>
+                                    <div class="favolite-heart"></div>
+                                <% end %>
                             <% end %>
-                            <p>
-                            <%= hidden_field_tag :restaurant_id, rest["id"]%>
                         </div>
                     </div>
                 <% end %>

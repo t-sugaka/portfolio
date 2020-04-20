@@ -7,15 +7,20 @@ class BookmarksController < ApplicationController
 
     def create
 		#binding.pry
-        p params[:restaurant_id]
         bookmark = Bookmark.new
         bookmark.user_id = current_user.id
         bookmark.restaurant_id = params[:restaurant_id]
 
         if bookmark.save
-            redirect_to bookmarks_index_path, success: 'ブックマークに登録しました'
+            redirect_to restaurants_result_path, success: 'ブックマークに登録しました'
         else
-            redirect_to results_path, danger: 'ブックマークに登録できませんでした'
+            redirect_to restaurants_result_path, danger: 'ブックマークに登録できませんでした'
         end
+    end
+
+    def destroy
+        @bookmark = Bookmark.find_by(user_id: current_user.id, restaurant_id: params[:restaurant_id])
+        @bookmark.destroy
+        redirect_to restaurants_result_path, success: 'ブックマークを取り消しました'
     end
 end

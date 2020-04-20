@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post 'restaurants/result', to: 'restaurants#result'
 
   get 'bookmarks/index'
-  post '/bookmarks', to: 'bookmarks#create'
+  get '/bookmarks', to: 'bookmarks#create'
 end
